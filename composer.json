@@ -4,13 +4,18 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+		"gufy/cpanel-whm":"~1.0",
+		"barryvdh/laravel-dompdf": "0.4.*",
+		"simplesoftwareio/simple-qrcode": "~1"            
 	},
 	"autoload": {
+        "psr-4": {
+            "AppHosting\\": "app/AppHosting"
+        },		
 		"classmap": [
 			"app/commands",
 			"app/controllers",
-			"app/models",
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"

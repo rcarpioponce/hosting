@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
+Route::get('/', array('uses'=>'HostingController@index'));
+Route::get('/test',function(){
+//return CpanelWhm::listpkgs(["api.version" =>1]);
+return CpanelWhm::accountsummary(["user" =>"bitrix"]);
 });
