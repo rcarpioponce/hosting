@@ -16,3 +16,12 @@ Route::get('/test',function(){
 //return CpanelWhm::listpkgs(["api.version" =>1]);
 return CpanelWhm::accountsummary(["user" =>"bitrix"]);
 });
+
+Route::get('/sendmail',function(){
+	$data = array();
+	Mail::send('emails.welcome', $data, function ($message) {
+    	$message->subject('WHM - Hosting');
+    	$message->from('server@renzocarpio.com', 'Hosting');
+    	$message->to('me@renzocarpio.com'); //->cc('bar@example.com');
+	});	
+});
